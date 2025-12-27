@@ -1,1 +1,13 @@
-console.log("Multiverse Heroes Bot Beta v1.0.0 çalışıyor");
+const { Client, GatewayIntentBits } = require("discord.js");
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds
+  ]
+});
+
+client.once("ready", () => {
+  console.log(`✅ ${client.user.tag} aktif!`);
+});
+
+client.login(process.env.TOKEN);
